@@ -89,6 +89,11 @@ def createTabPage(tabWidget, name, widgetToAdd=None, canScroll=False, height=Non
 
     return tab
 
+def selectDirectoryFromDialog(self, message="Select Folder", start_directory=".", opt=QFileDialog.ShowDirsOnly):
+    file_path = QFileDialog.getExistingDirectory(self, message, start_directory, opt)
+
+    return file_path
+
 def selectFileFromDialog(widget, previous_file_path="", message="Select File", start_directory=".", file_extension_filter="*.*"):
     file_path = QFileDialog.getOpenFileName(widget, message, start_directory, file_extension_filter)[0]
 
